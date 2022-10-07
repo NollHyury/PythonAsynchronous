@@ -1,0 +1,33 @@
+{
+		"files.eol": "\n",
+    "python.linting.pep8Enabled": true,
+    "python.linting.pylintEnabled": true,
+    "python.linting.flake8Enabled": false,
+    "python.linting.enabled": true,
+    "python.formatting.provider": "autopep8",
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "explorer.confirmDelete": false,
+    "python.formatting.blackArgs": [
+        "--line-length",
+        "120"
+    ],
+    "python.linting.flake8Args": [
+        "--max-line-length=120",
+        "--ignore=E402",
+    ],
+    "python.formatting.autopep8Args": [
+        "--max-line-length=180"
+    ], 
+    "python.linting.pylintArgs": [
+        "--load-plugins",
+        "--max-line-length=80",
+        "--errors-only",
+    ],
+    "python.pythonPath": "C:/PythonScripting/Applications/Miniconda3",
+    "editor.insertSpaces": false,
+    "editor.tabSize": 2,
+    "editor.detectIndentation": false,
+    "prettier.tabWidth": 2,
+    "prettier.useTabs": true  // This made it finally work for me
+}
