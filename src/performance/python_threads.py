@@ -1,10 +1,28 @@
 import datetime
 import math
 
+import threading
+import multiprocessing
+
 
 def main():
+    qtd_cores = multiprocessing.cpu_count()
+    print(f'Realizando o processamento matemático com {qtd_cores} core(s).')
+
     inicio = datetime.datetime.now()
-    computar(fim=50_000_000)
+
+    threads = []
+    for n in range(1, qtd_cores + 1):
+        ini = 50_000_000 * (n-1) / qtd_cores
+        fim = 50_000_000 * n / qtd_cores
+        print(f'Core {n} processando de {ini} até {fim}')
+        threads.append(
+            threading.Thread(target=computar, kwargs={'inicio': ini, 'fim': fim})
+        )
+
+    [th.start() for th in threads]
+    [th.join() for th in threads]
+
     tempo = datetime.datetime.now() - inicio
     print(f"Terminou em {tempo.total_seconds():.2f} segundos.")
 
@@ -24,5 +42,5 @@ if __name__ == '__main__':
 
 """
 	First run result
- 	Terminou em  segundos.
+ 	Terminou em 8.65 segundos.
 """
