@@ -24,10 +24,4 @@
         "--max-line-length=80",
         "--errors-only",
     ],
-    "python.pythonPath": "C:/PythonScripting/Applications/Miniconda3",
-    "editor.insertSpaces": false,
-    "editor.tabSize": 2,
-    "editor.detectIndentation": false,
-    "prettier.tabWidth": 2,
-    "prettier.useTabs": true  // This made it finally work for me
 }
